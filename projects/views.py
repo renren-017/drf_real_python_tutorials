@@ -22,6 +22,6 @@ class ProjectDetailView(APIView):
     @swagger_auto_schema(responses={200: ProjectSerializer()},
                          operation_summary='Reads certain Project by pk')
     def get(self, request, pk):
-        project = self.get_object(pk)
+        project = Project.objects.get(pk=pk)
         serializer = ProjectSerializer(project)
         return Response(serializer.data, status=status.HTTP_200_OK)
