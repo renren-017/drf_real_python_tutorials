@@ -24,9 +24,12 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework',
 
+    "django_apscheduler",
+
     'projects',
     'personal_diary',
     'flashcards',
+    'content_aggregator',
     'blogs',
     'to_do'
 ]
@@ -112,3 +115,23 @@ STATIC_URL = 'static/'
 # Default primary key field type
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "INFO",
+    },
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
