@@ -26,6 +26,7 @@ INSTALLED_APPS = [
 
     'projects',
     'personal_diary',
+    'flashcards',
     'blogs',
     'to_do'
 ]
