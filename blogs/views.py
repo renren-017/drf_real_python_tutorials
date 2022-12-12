@@ -39,15 +39,10 @@ class PostView(APIView):
 
 class PostDetailView(APIView):
 
-    @staticmethod
-    def get_object(pk):
-        post = Post.objects.get(pk=pk)
-        return post
-
     @swagger_auto_schema(responses={200: PostSerializer()},
                          operation_summary='Reads a certain Post')
     def get(self, request, pk):
-        post = self.get_object(pk)
+        post = Post.objects.get(pk=pk)
 
         serializer = PostSerializer(post)
         return Response(serializer.data)

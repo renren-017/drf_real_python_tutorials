@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'projects',
+    'personal_diary',
     'blogs',
     'to_do'
 ]
