@@ -1,5 +1,7 @@
 /migrations/
 
 .env
+
+img/
 __pycache__/
 .idea/
