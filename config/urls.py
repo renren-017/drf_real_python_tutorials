@@ -18,6 +18,7 @@ urlpatterns = [
     path('todo/', include('to_do.urls')),
     path('entries/', include('personal_diary.urls')),
     path('flashcards/', include('flashcards.urls')),
+    path('podcasts/', include('content_aggregator.urls')),
 
     path('api-auth/', include('rest_framework.urls')),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
